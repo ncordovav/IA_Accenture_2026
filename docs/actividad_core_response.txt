@@ -1,0 +1,32 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "¡Hola! Sí, te confirmo que la conexión funciona perfectamente. ¿En qué puedo ayudarte hoy?",
+            "thoughtSignature": "Eq0KCqoKAWkUfRM/fj2lu0MrcXASeGSzwgDXKpGCOyoSfCjdlkuvd0SMMuPlITNNxhiAiJHUcJ0utaL9q9JJAPYmrZVD/wVIfACmDxTT0YLVFtqT5a0MAg9CRC+m2hz2NT5cIKbaprzxMM4L0/bw17dJr2WCf2VOGAzfF0xQZJR5vOQxW8xyqsvU/MKiXIPWUWOuz9cZ9AFoT1qWfjGCBjzdA8yALJx7T/oDztZlU4iByr7JrTvpJ1RVmF2xrQO10kBAcdEsIf/qzigM+ckp1BIA8EdVQ1R7KpqudeZsxlxITGGDRFcJNZg+J7SNFoINJYa/jrzUZQkTEheTxmhgoRYhoiLkffjzCfvuqSrQ67qbYaZQv6G0DVrNdGAuhgIFzHEi47JTKflu23JgjFt05lugNkX9i+A6pGcFbMqFa5gn1nlTGtkkkYBuUpTE4k1P6VY/4N2r//WoxiVv2C1PivtePF3+ZIIn4hW8tGn3fj/eKj83+kfXIyMhsRro2L+CneuNuZHO8rYyTpwtwOKxQ/QlMjUxwvfFO9IJkUEK8tK3y126kO7hLsYLyuiBN2V9LbAMY6n2A/4qaFCzoEw2rEwsK2kdT5ngBL3d53aoX5n36ackviNFEZiwERM8B698/QgWOisr0Q/DnsigCyG9+oB1P4EBvzwzMG4EkpadYoKtlLnEdYBGd6LL58XfimxU2eYi4Wwxwy/72TA3hbP+quwl58D2BAd/WFipWfBn4ndhGWGfP6PXrC1PZ2GL+aSV+X/a10fllNa7yk3oSo7sXXKNvkZlMdjI9WWsP7kVdLkAoSvZN/Tt82SB/KNrXybNpSopCZqeUqRitmTK1CCyCM+R3SEC+dI8QLIbTpmNRDRXdXC/o786YWPSlMg0IjBzE+dy9EKRG4NGZtoX4wGGmpk+q0KmgqgM+Vatjpp8QHa/2UOTz/486TtPktdPAGSwBG7W5pM5i5KgwdUcNzETmI9LB8KBEOXF82YBnFqpdV1HAqzSfxKghcyq7gWdJiSkyLev2EIBHxu5wiBX7jvBgJK3tTOc2MDRabotvltKHXxMS9ceCEuFjJ4nccdL9jNlE5zEfYgIL9+/LXCCt836rmzMXEMAgECZT3E5jHm94kW3m2mOH2UA731Y3vdF+HhWv3589z4Vv7JZhrz+NWuBlmh61je5ejYMVqX6PtRoxSRoBQjjhHVibDhPDgg/Pn91MbvxvCzsl5xkDaTKpAErwmzlxZ381zjb87Iz4w7AixMxLSltoyYbJAHPsq3k53wrnR3El/Vn/tuTxAllMa9/1Dl6M0TfT+ACi06XznmP1oY3cKX2CyLltWuxNnRHsXhTonVz8PoFeaBsrEMvoXJ+ZaAaSOqByrYmulCjBZ0fw+0vv30ilUZsleN+V1YRyzzZrRQXGCR/wK+gMyUo4tgptdBasrzvBO1z0wGxgdTD4gUobMf8KFGQEJx8/YothXWqFuiz3mkMrD5wZ0pye2wO/LJOIQ0pdkxOO4U37r5f15ZGXx9pBFU/J8ayjrBREBYDtI5jwRsABvKWTRaY84wWj9Wq2AWWMQwlPDFa0X3TY1mX8IhhJOhmXwE2A6dFISWlpKoReifdzZZEDuUU46h2oqamEvbXw9Naob0cpC5JXFaTgt78w9MxaXXBodNILJpdIcOiYqQBbdy7tvhRNDU3ZfWW8MaBQmDTX7FDCX4wk9Ws2bt9MkZTJOPi9vkABvr8mW+VlSqg8AeJ8Y2NcWlu6iwPqr7pXfDeleScBvgFzaU="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "index": 0
+    }
+  ],
+  "usageMetadata": {
+    "promptTokenCount": 10,
+    "candidatesTokenCount": 21,
+    "totalTokenCount": 324,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 10
+      }
+    ],
+    "thoughtsTokenCount": 293,
+    "serviceTier": "standard"
+  },
+  "modelVersion": "gemini-3.6-flash",
+  "responseId": "G-_OarjQC-aDmtkP9aii0AE"
+}
