@@ -3,13 +3,11 @@ import requests
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Se sube dos niveles desde 'src' para llegar a la raíz 'plantilla-repositorio-base' donde está el .env
-# env_path = Path(__file__).resolve().parent.parent / '.env'
-# load_dotenv(dotenv_path=env_path)
 load_dotenv()
  
 def obtener_dato_de_prueba(pregunta):
     api_key = os.getenv("GEMINI_API_KEY")
+    print(f"API Key: {api_key}")  # Agrega esta
     modelo = "gemini-3.5-flash"
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent?key={api_key}"
     

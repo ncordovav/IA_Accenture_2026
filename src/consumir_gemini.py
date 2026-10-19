@@ -1,35 +1,89 @@
 import os
 import requests
+import re
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Se sube dos niveles desde 'src' para llegar a la raíz 'plantilla-repositorio-base' donde está el .env
-# env_path = Path(__file__).resolve().parent.parent / '.env'
-# load_dotenv(dotenv_path=env_path)
 load_dotenv()
 
+
+def validar_pregunta(pregunta):
+
+    for signo in [".", ",", ",", ";", "!", "¡", "?", "¿", '"']:
+        pregunta = pregunta.replace(signo, "")
+
+    palabras = pregunta.split()
+    
+    largo_valido_palabra = any(len(p) > 2 for p in palabras)
+
+    if not pregunta or pregunta.strip() == "":
+        raise ValueError("Error! La pregunta no puede estar vacía.")
+    
+    elif pregunta.isnumeric():
+        raise ValueError("Error! La pregunta no puede ser solo un número.")
+    
+    elif pregunta.isalpha() and len(pregunta.split()) == 1:
+        raise ValueError("Error! La pregunta debe tener al menos 2 palabras.")
+
+    elif re.search(r'\b(?=[a-zA-Z]*\d)(?=\d*[a-zA-Z])[a-zA-Z\d]+\b', pregunta):
+        raise ValueError("Error! La pregunta no puede contener palabras que mezclen números y letras.")
+
+    elif len(pregunta.split()) > 1 and any(len(palabra) > 23 for palabra in palabras):
+        # La palabra más larga en español tiene 23 caracteres, por lo que se considera un límite razonable. 
+        raise ValueError("Error! Has ingresado una palabra demasiado larga.")
+    
+    elif not largo_valido_palabra:
+        raise ValueError("Error! La pregunta debe contener al menos una palabra con más de 2 caracteres.")
+    
+    else:
+        return True
+
+
 def construir_peticion(pregunta):
-    api_key = os.getenv("GEMINI_API_KEY")
-    modelo = "gemini-3.5-flash"
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent?key={api_key}"
-    body = {
-        "contents": [
-            {"parts": [{"text": pregunta}]}
-        ]
-    }
-    return url, body
+    if validar_pregunta(pregunta):
+        api_key = os.getenv("GEMINI_API_KEY")
+        modelo = "gemini-3.5-flash"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent?key={api_key}"
+        body = {
+                
+            "contents": [
+                {"parts": [{"text": pregunta}]}
+            ]
+            }
+        return url, body
+
 
 def enviar_peticion(url, body):
-     respuesta = requests.post(url, json=body)
-     return respuesta.json()
+    try:
+        respuesta = requests.post(url, json=body)
+    #    respuesta.raise_for_status()  # Lanza un error si la respuesta HTTP no es 200
+    except requests.exceptions.ConnectionError:
+        raise RuntimeError("No se pudo conectar con el servicio. Intenta nuevamente en unos momentos.")
+    try:
+        return respuesta.json()
+    except requests.exceptions.JSONDecodeError:
+        raise RuntimeError("La respuesta del servicio no llegó en el formato esperado.")
+    #except Exception as e:
+    #    print(f"Error inesperado al procesar la respuesta: {e}")
+
 
 def extraer_texto(datos):
-    return datos["candidates"][0]["content"]["parts"][0]["text"]
+    try:
+     	return datos["candidates"][0]["content"]["parts"][0]["text"]
+    except (KeyError, IndexError):
+     	raise RuntimeError("La respuesta no trae el texto generado en el lugar esperado.")
+
 
 def obtener_dato_de_prueba(pregunta):
     url, body = construir_peticion(pregunta)
     datos = enviar_peticion(url, body)
     return extraer_texto(datos)
 
+
 if __name__ == "__main__":
-    print(obtener_dato_de_prueba("Confirma en una frase corta que esta conexión funciona"))
+    pregunta = input("Introduce tu pregunta: ")
+    try:
+        resultado = obtener_dato_de_prueba(pregunta)
+        print(resultado)
+    except (ValueError, RuntimeError) as error:
+        print("No se pudo completar la operación:", error)
