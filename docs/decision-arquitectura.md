@@ -4,7 +4,7 @@
   Gemini 3.1 Flash-Lite para la funcionalidad principal de la miniaplicación.
   
  ## Diagrama de arquitectura
- ![Diagrama de arquitectura de la miniaplicación](.\diagrama_arquitectura.png)
+ ![Diagrama de arquitectura de la miniaplicación](diagrama_arquitectura.png)
 
  El flujo completo va desde el ingreso por terminal de la pregunta del usuario hasta la respuesta final, pasando por **'construir_peticion'** (que valida la pregunta bajo ciertos criterios indicados en el diagrama), **'enviar_peticion'** (con la credencial **'GEMINI_API_KEY'** leída desde **'.env'** y el manejo de errores en **'try/except'**) y **'extraer_texto'** (que además calcula el costo total a partir de **'usageMetadata'**). El diagrama completo está en ***'docs/diagrama-arquitectura.png'***.
   
