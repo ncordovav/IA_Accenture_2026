@@ -1,10 +1,17 @@
 import os
 import requests
 import re
-from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
+
+def calcular_costo(datos: dict, precio_entrada: float, precio_salida: float) -> float:
+    tokens_entrada = datos["usageMetadata"]["promptTokenCount"]
+    tokens_salida = datos["usageMetadata"]["candidatesTokenCount"]
+    costo_entrada = tokens_entrada * precio_entrada
+    costo_salida = tokens_salida * precio_salida
+    costo_total = costo_entrada + costo_salida
+    return costo_total
 
 
 def validar_pregunta(pregunta):
@@ -77,6 +84,8 @@ def extraer_texto(datos):
 def obtener_dato_de_prueba(pregunta):
     url, body = construir_peticion(pregunta)
     datos = enviar_peticion(url, body)
+    costo = calcular_costo(datos, 0.0000003, 0.0000025)
+    print(f"Costo estimado de la petición: {costo}")
     return extraer_texto(datos)
 
 
