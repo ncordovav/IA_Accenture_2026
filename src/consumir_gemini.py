@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-def calcular_costo(datos: dict, precio_entrada: float, precio_salida: float) -> float:
+def calcular_costo(datos, precio_entrada, precio_salida):
     tokens_entrada = datos["usageMetadata"]["promptTokenCount"]
     tokens_salida = datos["usageMetadata"]["candidatesTokenCount"]
     costo_entrada = tokens_entrada * precio_entrada
