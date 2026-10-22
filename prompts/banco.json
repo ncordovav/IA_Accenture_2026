@@ -1,0 +1,79 @@
+[
+  {
+    "nombre": "evaluar_atencion",
+    "system_instruction": "Responde únicamente con un JSON con las claves 'satisfaccion' ('satisfecho', 'neutral' o 'insatisfecho') y 'puntuacion' (1 a 5).",
+    "ejemplo_usuario": "La atención en el mesón fue rápida y el personal muy amable.",
+    "claves_esperadas": ["satisfaccion", "puntuacion"],
+    "response_schema": {
+      "type": "OBJECT",
+      "properties": {
+        "satisfaccion": { "type": "STRING" },
+        "puntuacion": { "type": "NUMBER" }
+      },
+      "required": ["satisfaccion", "puntuacion"]
+    }
+  },
+  {
+    "nombre": "formatear_respuesta_oficina",
+    "system_instruction": "Obtiene los datos administrativos de la oficina pública y redacta una respuesta clara detallando dirección exacta y horarios de atención. Responde únicamente con un JSON con la clave 'respuesta_usuario'.",
+    "ejemplo_usuario": "Registro Civil Ñuñoa.",
+    "claves_esperadas": ["respuesta_usuario"],
+    "response_schema": {
+      "type": "OBJECT",
+      "properties": {
+        "respuesta_usuario": { "type": "STRING" }
+      },
+      "required": ["respuesta_usuario"]
+    }
+  },
+  {
+    "nombre": "detallar_tramite_oficina",
+    "system_instruction": "Genera una guía rápida de los requisitos, documentos obligatorios y pasos para realizar el trámite consultado en la oficina pública. Responde únicamente con un JSON con las claves 'tramite', 'documentos_requeridos' y 'pasos'.",
+    "ejemplo_usuario": "¿Qué documentos necesito para renovar mi cédula de identidad?",
+    "claves_esperadas": ["tramite", "documentos_requeridos", "pasos"],
+    "response_schema": {
+      "type": "OBJECT",
+      "properties": {
+        "tramite": { "type": "STRING" },
+        "documentos_requeridos": { 
+          "type": "ARRAY", 
+          "items": { "type": "STRING" } 
+        },
+        "pasos": { 
+          "type": "ARRAY", 
+          "items": { "type": "STRING" } 
+        }
+      },
+      "required": ["tramite", "documentos_requeridos", "pasos"]
+    }
+  },
+  {
+    "nombre": "sugerir_canal_atencion",
+    "system_instruction": "Determina si el trámite consultado se puede realizar de forma online, presencial o mixta, y justifica brevemente. Responde únicamente con un JSON con las claves 'canal' ('online', 'presencial' o 'mixto') y 'justificacion'.",
+    "ejemplo_usuario": "¿Puedo sacar el certificado de antecedentes por internet o debo ir presencialmente?",
+    "claves_esperadas": ["canal", "justificacion"],
+    "response_schema": {
+      "type": "OBJECT",
+      "properties": {
+        "canal": { "type": "STRING" },
+        "justificacion": { "type": "STRING" }
+      },
+      "required": ["canal", "justificacion"]
+    }
+  },
+  {
+    "nombre": "obtener_direccion_exacta",
+    "system_instruction": "Para la oficina y comuna indicada, proporciona la dirección exacta, la referencia a estación de metro más cercana y el nivel de accesibilidad. Responde únicamente con un JSON con las claves 'direccion', 'referencia_cercana' y 'accesibilidad'.",
+    "ejemplo_usuario": "Dame la dirección de la oficina de ChileAtiende en Ñuñoa.",
+    "claves_esperadas": ["direccion", "referencia_cercana", "accesibilidad"],
+    "response_schema": {
+      "type": "OBJECT",
+      "properties": {
+        "direccion": { "type": "STRING" },
+        "referencia_cercana": { "type": "STRING" },
+        "accesibilidad": { "type": "STRING" }
+      },
+      "required": ["direccion", "referencia_cercana"]
+    }
+  }
+]

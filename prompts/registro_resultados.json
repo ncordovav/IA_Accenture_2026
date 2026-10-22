@@ -1,0 +1,22 @@
+{
+  "evaluar_atencion": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "formatear_respuesta_oficina": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "detallar_tramite_oficina": {
+    "exitos": 3,
+    "intentos": 3
+  },
+  "sugerir_canal_atencion": {
+    "exitos": 2,
+    "intentos": 3
+  },
+  "obtener_direccion_exacta": {
+    "exitos": 3,
+    "intentos": 3
+  }
+}
