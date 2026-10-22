@@ -15,19 +15,19 @@ Sigue estos pasos para clonar y preparar el entorno de desarrollo:
 1. **Clonar el repositorio:**
    ```bash
    git clone https://github.com/ncordovav/IA_Accenture_2026 prueba-gate1
-   
+
    cd prueba-gate1
    ```
 
 2. **Crear y activar un entorno virtual (Recomendado):**
    ```bash
    # En Windows:
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1
+     python -m venv venv
+     .\venv\Scripts\Activate.ps1
 
    # En macOS/Linux:
-   python3 -m venv venv
-   source venv/bin/activate
+     python3 -m venv venv
+     source venv/bin/activate
    ```
 
 3. **Instalar las dependencias:**
@@ -40,7 +40,11 @@ Sigue estos pasos para clonar y preparar el entorno de desarrollo:
 4. **Crear el archivo .env a partir del .env.example:**
    crea un archivo llamado `.env` en la raíz del proyecto a partir del archivo `.env.example`.
    ```bash
-   Copy-Item .env.example .env
+   # En Windows:
+     Copy-Item .env.example .env
+
+   # En macOS/Linux:
+     cp .env.example .env
    ```
 
 5. **Configurar las Variables de Entorno:**
@@ -60,7 +64,11 @@ Sigue estos pasos para clonar y preparar el entorno de desarrollo:
 Para ejecutar la aplicación, ejecuta el script principal desde la terminal:
 
 ```bash
-python main.py
+# En Windows:
+  python main.py
+
+# En macOS/Linux:
+  python3 main.py
 ```
 
 
@@ -72,6 +80,6 @@ python main.py
 - `prompts/` : banco de prompts y pruebas de consistencia.
 - `requirements.txt` : dependencias de Python de tu proyecto, para que cualquier otra persona pueda reconstruir tu entorno con un solo comando.
 - `.env.example` : plantilla de las variables de entorno, sin valores reales. 
-- `.gitignore` : archivos y carpetas que Git ignora.
+- `.gitignore` : archivos y carpetas que son ignorados por Git.
 
 
