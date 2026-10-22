@@ -1,27 +1,77 @@
-# Plantilla de repositorio base — Especialización en Desarrollo con IA Generativa (Accenture)
+# Consumir Gemini API con Python 🚀
 
-Esta es la estructura base que vas a usar como punto de partida para tu proyecto en este programa. Es la misma estructura que vas a ir ampliando bloque a bloque, hasta llegar a la aplicación completa que entregas en el Gate 3.
+Este proyecto es una aplicación en Python diseñada para interactuar con los modelos de Inteligencia Artificial de Google Gemini. La lógica de comunicación con la API está centralizada en `consumir_gemini.py`, la cual es ejecutada y orquestada desde el punto de entrada principal del programa: `main.py`.
 
-## Cómo empezar
+## 🛠️ Requisitos Previos
 
-Estos pasos se completan de forma progresiva a lo largo de la Unidad U1.2, no todos el mismo día:
+Antes de comenzar, asegúrate de tener instalado:
+* **Python 3.10** o superior.
+* Una cuenta de Google AI Studio para obtener tu clave de API (API Key).
 
-1. Descarga este archivo comprimido (adjunto en la plataforma) y descomprímelo en tu computador. Inicializa el control de versiones sobre esa carpeta y registra tu primer commit con esta estructura base, tal como llegó, antes de modificar nada.
-2. Crea tu entorno virtual de Python (por ejemplo, con `venv`) y actívalo.
-3. Instala las dependencias que necesites y regístralas en `requirements.txt` (al inicio puede estar vacío o con muy pocas).
-4. Copia `.env.example` a un archivo nuevo llamado `.env`, y completa ahí tus credenciales reales (llaves de API, tokens). El archivo `.env` nunca se sube al repositorio: ya está excluido en `.gitignore`.
+## 🚀 Instalación y Configuración
+
+Sigue estos pasos para clonar y preparar el entorno de desarrollo:
+
+1. **Clonar el repositorio:**
+   ```bash
+   git clone https://github.com/ncordovav/IA_Accenture_2026 prueba-gate1
+   
+   cd prueba-gate1
+   ```
+
+2. **Crear y activar un entorno virtual (Recomendado):**
+   ```bash
+   # En Windows:
+   python -m venv venv
+   .\venv\Scripts\Activate.ps1
+
+   # En macOS/Linux:
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Instalar las dependencias:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *(Nota: Asegúrate de que tu `requirements.txt` incluya `requests`,`google-genai` y `python-dotenv`).*
+
+
+4. **Crear el archivo .env a partir del .env.example:**
+   crea un archivo llamado `.env` en la raíz del proyecto a partir del archivo `.env.example`.
+   ```bash
+   Copy-Item .env.example .env
+   ```
+
+5. **Configurar las Variables de Entorno:**
+   añade tu API Key de Gemini al archivo `.env`: 
+   ```env
+   GEMINI_API_KEY="tu_api_key_aqui"
+   ```
+
+## 💻 Arquitectura del Proyecto
+
+* **`main.py`**: punto de entrada oficial de la aplicación. Maneja la interfaz de usuario (consola o argumentos), inicializa los flujos y llama a las funciones del módulo de Gemini.
+* **`consumir_gemini.py`**: módulo que contiene la lógica de integración, configuración del cliente de Google, manejo de prompts y retorno de respuestas de la API.
+* **`.env`**: archivo local oculto para guardar credenciales de forma segura (no se sube al repositorio).
+
+## 🛠️ Uso
+
+Para ejecutar la aplicación, ejecuta el script principal desde la terminal:
+
+```bash
+python main.py
+```
+
 
 ## Estructura de carpetas
 
-- `src/` : todo el código fuente de tu proyecto va aquí.
+- `src/` : contiene el código fuente del proyecto.
 - `docs/` : documentación técnica del proyecto (diagramas, decisiones de arquitectura, notas).
-- `tests/` : pruebas de tu código (las vas a usar más adelante en el programa, cuando el proyecto lo requiera).
+- `tests/` : pruebas de código.
+- `prompts/` : banco de prompts y pruebas de consistencia.
 - `requirements.txt` : dependencias de Python de tu proyecto, para que cualquier otra persona pueda reconstruir tu entorno con un solo comando.
-- `.env.example` : plantilla de las variables de entorno que tu proyecto necesita, sin valores reales. Tu archivo `.env` real (con tus credenciales) nunca se commitea.
-- `.gitignore` : le dice a Git qué archivos y carpetas ignorar (entre ellos, tu entorno virtual y tu archivo `.env`).
+- `.env.example` : plantilla de las variables de entorno, sin valores reales. 
+- `.gitignore` : archivos y carpetas que Git ignora.
 
-## Reglas que se mantienen durante todo el programa
 
-- Ningún secreto (contraseña, llave de API, token) va escrito directamente en el código ni en ningún archivo que se suba al repositorio.
-- Cada proyecto nuevo tiene su propio entorno virtual: no se comparten dependencias entre proyectos distintos.
-- Todo el trabajo que se entrega en este programa vive en un repositorio de GitHub, sin excepción.
