@@ -24,23 +24,23 @@ def validar_pregunta(pregunta):
     largo_valido_palabra = any(len(p) > 2 for p in palabras)
 
     if not pregunta or pregunta.strip() == "":
-        raise ValueError("Error! La pregunta no puede estar vacía.")
+        raise ValueError("La pregunta debe ser una cadena de texto.")
     
     elif pregunta.isnumeric():
-        raise ValueError("Error! La pregunta no puede ser solo un número.")
+        raise ValueError("La pregunta no puede ser solo un número.")
     
     elif pregunta.isalpha() and len(pregunta.split()) == 1:
-        raise ValueError("Error! La pregunta debe tener al menos 2 palabras.")
+        raise ValueError("La pregunta debe tener al menos 2 palabras.")
 
     elif re.search(r'\b(?=[a-zA-Z]*\d)(?=\d*[a-zA-Z])[a-zA-Z\d]+\b', pregunta):
-        raise ValueError("Error! La pregunta no puede contener palabras que mezclen números y letras.")
+        raise ValueError("La pregunta no puede contener palabras que mezclen números y letras.")
 
     elif len(pregunta.split()) > 1 and any(len(palabra) > 23 for palabra in palabras):
         # La palabra más larga en español tiene 23 caracteres, por lo que se considera un límite razonable. 
-        raise ValueError("Error! Has ingresado una palabra demasiado larga.")
+        raise ValueError("Has ingresado una palabra demasiado larga.")
     
     elif not largo_valido_palabra:
-        raise ValueError("Error! La pregunta debe contener al menos una palabra con más de 2 caracteres.")
+        raise ValueError("La pregunta debe contener al menos una palabra con más de 2 caracteres.")
     
     else:
         return True
@@ -49,7 +49,7 @@ def validar_pregunta(pregunta):
 def construir_peticion(pregunta):
     if validar_pregunta(pregunta):
         api_key = os.getenv("GEMINI_API_KEY")
-        modelo = "gemini-3.5-flash"
+        modelo = "gemini-3.5-flash-lite"
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent?key={api_key}"
         body = {
                 
@@ -76,23 +76,35 @@ def enviar_peticion(url, body):
 
 def extraer_texto(datos):
     try:
-     	return datos["candidates"][0]["content"]["parts"][0]["text"]
+        print("Tokens prompt:", datos["usageMetadata"]["promptTokenCount"])
+        print("Tokens candidates:", datos["usageMetadata"]["candidatesTokenCount"])
+        print("Tokens total:", datos["usageMetadata"]["totalTokenCount"])
+        return datos["candidates"][0]["content"]["parts"][0]["text"]
     except (KeyError, IndexError):
-     	raise RuntimeError("La respuesta no trae el texto generado en el lugar esperado.")
+        raise RuntimeError("La respuesta no trae el texto generado en el lugar esperado.")
 
 
 def obtener_dato_de_prueba(pregunta):
-    url, body = construir_peticion(pregunta)
-    datos = enviar_peticion(url, body)
-    costo = calcular_costo(datos, 0.0000003, 0.0000025)
-    print(f"Costo estimado de la petición: {costo}")
-    return extraer_texto(datos)
+    try:
+        url, body = construir_peticion(pregunta)
+        datos = enviar_peticion(url, body)
+        costo = calcular_costo(datos, 0.0000003, 0.0000025)
+        print(f"Costo estimado de la petición: {costo}")
+        return extraer_texto(datos)
+    except KeyError as e:
+        print(f"Error al extraer el dato de prueba: {e}")
+        return None
+    except Exception as e:
+        print(f"Error inesperado: {e}")
+       
+        return None
 
 
 if __name__ == "__main__":
     pregunta = input("Introduce tu pregunta: ")
     try:
         resultado = obtener_dato_de_prueba(pregunta)
-        print(resultado)
+        if resultado is not None:
+            print(resultado)
     except (ValueError, RuntimeError) as error:
         print("No se pudo completar la operación:", error)
