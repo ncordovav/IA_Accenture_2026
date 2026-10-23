@@ -6,7 +6,7 @@ Este proyecto es una aplicación en Python diseñada para interactuar con los mo
 
 Antes de comenzar, asegúrate de tener instalado:
 * **Python 3.10** o superior.
-* Una cuenta de Google AI Studio para obtener tu clave de API (API Key).
+* Una cuenta de Google AI Studio para obtener tu clave de API (**GEMINI API KEY**).
 
 ## 🚀 Instalación y Configuración
 
