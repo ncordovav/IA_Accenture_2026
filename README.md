@@ -50,7 +50,7 @@ Sigue estos pasos para clonar y preparar el entorno de desarrollo:
 5. **Configurar las Variables de Entorno:**
    añade tu API Key de Gemini al archivo `.env`: 
    ```env
-   GEMINI_API_KEY="tu_api_key_aqui"
+   GEMINI_API_KEY= tu_llave_aqui
    ```
 
 ## 💻 Arquitectura del Proyecto
@@ -82,4 +82,8 @@ Para ejecutar la aplicación, ejecuta el script principal desde la terminal:
 - `.env.example` : plantilla de las variables de entorno, sin valores reales. 
 - `.gitignore` : archivos y carpetas que son ignorados por Git.
 
-
+## Registro del ensayo de instalación limpia
+- **Fecha:** 2026-10-22
+- **Encontrado:** faltaba actualizar archivo **README** y mejorar algunos manejos de errores (try/except).
+- **Corregido:** se actualizan archivos **README**, **main.py** y **consumir_gemini.py**, tras lo cual se actualiza repositorio.
+- **Resultado tras la corrección:** el proyecto corre sin intervención manual.
