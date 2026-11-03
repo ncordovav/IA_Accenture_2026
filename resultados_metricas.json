@@ -1,0 +1,142 @@
+[
+  {
+    "consulta": "¿Qué es el sistema binario?",
+    "respuesta": "Sistema de numeración que utiliza solo dos dígitos: el 0 y el 1. Es fundamental en informática y electrónica para procesar y almacenar información.",
+    "precision": 0.5833333333333334,
+    "cobertura": 0.7368421052631579,
+    "f1": 0.6511627906976745
+  },
+  {
+    "consulta": "¿Para qué se utiliza el test de Turing?",
+    "respuesta": "Sirve para evaluar si una máquina puede exhibir un comportamiento inteligente indistinguible del de un ser humano.",
+    "precision": 0.8823529411764706,
+    "cobertura": 0.625,
+    "f1": 0.7317073170731708
+  },
+  {
+    "consulta": "¿Qué representa un byte?",
+    "respuesta": "Una unidad básica de almacenamiento de datos en informática, compuesta por 8 bits, capaz de representar un carácter (como una letra o número).",
+    "precision": 0.30434782608695654,
+    "cobertura": 0.5384615384615384,
+    "f1": 0.3888888888888889
+  },
+  {
+    "consulta": "¿Quién descubrió Chile viajando desde Perú y en qué año?",
+    "respuesta": "Diego de Almagro, partiendo desde Perú, descubrió Chile en 1536.",
+    "precision": 0.5,
+    "cobertura": 0.7142857142857143,
+    "f1": 0.588235294117647
+  },
+  {
+    "consulta": "¿Cuál es el nombre del primer cosmonauta ruso y en qué año realizó su vuelo espacial?",
+    "respuesta": "Yuri Gagarin, en 1961.",
+    "precision": 1.0,
+    "cobertura": 0.6666666666666666,
+    "f1": 0.8
+  },
+  {
+    "consulta": "¿Cómo se llama el triángulo con 2 ángulos iguales?",
+    "respuesta": "Se llama triángulo isósceles.",
+    "precision": 0.5,
+    "cobertura": 1.0,
+    "f1": 0.6666666666666666
+  },
+  {
+    "consulta": "¿Cuál es el país más pequeño del mundo?",
+    "respuesta": "El Vaticano.",
+    "precision": 0.5,
+    "cobertura": 0.3333333333333333,
+    "f1": 0.4
+  },
+  {
+    "consulta": "Nombra los 5 libros de la Biblia que se encuentran en la Torá",
+    "respuesta": "Génesis, Éxodo, Levítico, Números y Deuteronomio.",
+    "precision": 1.0,
+    "cobertura": 1.0,
+    "f1": 1.0
+  },
+  {
+    "consulta": "¿Por qué el 23 de Abril se celebra el Día Internacional del Libro",
+    "respuesta": "Se celebra el 23 de abril porque coincide con el fallecimiento de Miguel de Cervantes, William Shakespeare y Inca Garcilaso de la Vega en 1616. La UNESCO lo declaró oficial en 1995 para fomentar la lectura.",
+    "precision": 0.4444444444444444,
+    "cobertura": 0.8421052631578947,
+    "f1": 0.5818181818181818
+  },
+  {
+    "consulta": "¿Por qué se considera que el ornitorrinco es un animal tan extraño?",
+    "respuesta": "Se considera extraño por su extraña combinación de rasgos: pone huevos como reptil, amamanta sin pezones, tiene hocico de pato, patas de nutria, es venenoso y detecta presas con electrorrecepción.",
+    "precision": 0.06666666666666667,
+    "cobertura": 0.25,
+    "f1": 0.10526315789473685
+  },
+  {
+    "consulta": "¿Qué representa la pirámide de Maslow?",
+    "respuesta": "La pirámide de Maslow es una teoría psicológica que jerarquiza las necesidades humanas en cinco niveles: desde las básicas (supervivencia) hasta la autorrealización.",
+    "precision": 0.30434782608695654,
+    "cobertura": 0.7,
+    "f1": 0.42424242424242425
+  },
+  {
+    "consulta": "¿Cómo se llaman las momias que se consideran más antiguas y dónde se han encontrado?",
+    "respuesta": "Las momias de los **Chinchorro**, consideradas las más antiguas del mundo (creadas artificialmente), se han encontrado en el desierto de Atacama, en el norte de **Chile** y sur de **Perú**.",
+    "precision": 0.5666666666666667,
+    "cobertura": 0.7083333333333334,
+    "f1": 0.6296296296296297
+  },
+  {
+    "consulta": "¿Por qué se llamó Bluetooth a la tecnología inalámbrica?",
+    "respuesta": "Se llamó así en honor al rey vikingo Harald Bluetooth (Harald Gormsson), famoso por unificar tribus nórdicas, simbolizando cómo la tecnología unifica dispositivos.",
+    "precision": 0.6086956521739131,
+    "cobertura": 0.4117647058823529,
+    "f1": 0.4912280701754386
+  },
+  {
+    "consulta": "¿Cuál fue la causa de la guerra de los 80 años entre España y Países Bajos?",
+    "respuesta": "El deseo de independencia de los Países Bajos respecto al Imperio español, motivado por conflictos religiosos (protestantismo vs. catolicismo) y la resistencia a los altos impuestos y centralización de Felipe II.",
+    "precision": 0.2903225806451613,
+    "cobertura": 0.391304347826087,
+    "f1": 0.33333333333333337
+  },
+  {
+    "consulta": "¿Cuál es el imperio más extenso que ha existido y cuál fue mayor su extensión?",
+    "respuesta": "El Imperio británico. Su extensión máxima fue de unos 35.5 millones de kilómetros cuadrados (1920), abarcando casi una cuarta parte de la Tierra.",
+    "precision": 0.30434782608695654,
+    "cobertura": 0.7777777777777778,
+    "f1": 0.43750000000000006
+  },
+  {
+    "consulta": "Cuándo se celebra el día de Pi y por qué se celebra ese día",
+    "respuesta": "Se celebra el **14 de marzo** (3/14 en formato estadounidense), porque coincide con los primeros dígitos de la constante matemática Pi ($\\pi \\approx 3,14$).",
+    "precision": 0.6666666666666666,
+    "cobertura": 0.5517241379310345,
+    "f1": 0.6037735849056604
+  },
+  {
+    "consulta": "¿Cuál es el animal vertebrado más pequeño?",
+    "respuesta": "El vertebrado más pequeño es la rana *Paedophryne amauensis*, con un tamaño promedio de solo 7,7 milímetros.",
+    "precision": 0.35294117647058826,
+    "cobertura": 0.5454545454545454,
+    "f1": 0.42857142857142855
+  },
+  {
+    "consulta": "¿Cuál es la luna más grande del sistema solar y cuál es su diámetro aproximado?",
+    "respuesta": "Ganimedes. Su diámetro es de aproximadamente 5.268 kilómetros.",
+    "precision": 0.5,
+    "cobertura": 0.5,
+    "f1": 0.5
+  },
+  {
+    "consulta": "¿Cuál es la función de la retina en el ojo humano?",
+    "respuesta": "Capturar la luz mediante fotorreceptoras (conos y bastones) y convertirla en impulsos eléctricos que el cerebro traduce en imágenes.",
+    "precision": 0.3684210526315789,
+    "cobertura": 0.35,
+    "f1": 0.358974358974359
+  },
+  {
+    "consulta": "¿Cuál es la mayor profundidad del océano y en qué lugar se encuentra?",
+    "respuesta": "La mayor profundidad es el Abismo Challenger, con unos 11.034 metros, ubicado en la Fosa de las Marianas (Océano Pacífico).",
+    "precision": 0.5,
+    "cobertura": 0.7142857142857143,
+    "f1": 0.588235294117647
+  }
+]
