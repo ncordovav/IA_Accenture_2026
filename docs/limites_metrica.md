@@ -7,22 +7,22 @@ Coincidencia entre frases revisando palabras y la cantidad de ocurrencias.
 
 Calcula métricas de precisión, cobertura y F1, donde F1 se define como:
 
-$$f1 = 2 * precisión * cobertura / (precisión + cobertura)$$
+$$F1 = 2 * precisión * cobertura / (precisión + cobertura)$$
 
 
 ## Modos de falla conocidos
 
 - Sinónimos y paráfrasis correctas puntúan F1 bajo.
 ```
-F1("el auto es veloz","el vehiculo es rapido") = 0.5
+F1("Triángulo isósceles","Se llama triángulo isósceles") = 0.66
 ```
 - Datos incorrectos (fechas, cifras) pueden puntuar F1 alto si el
-  resto de la oración tiene alta coincidencia de palabras.
+  resto de la oración tiene alta coincidencia de palabras. No se observaron entre las respuestas obtenidas, por lo que se indica un ejemplo de referencia.
  ```
  F1("Python fue inventado en 1991","Python fue inventado en 1992") = 0.8
  ``` 
 - Negaciones ausentes casi no bajan el valor de F1, aunque
-  inviertan el significado de la respuesta esperada.
+  inviertan el significado de la respuesta esperada. No se observaron entre las respuestas obtenidas, por lo que se indica un ejemplo de referencia.
 ``` 
 F1("Python NO fue inventado en 1992","Python fue inventado en 1992") = 0.8 
 ```
