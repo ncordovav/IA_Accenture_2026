@@ -81,6 +81,7 @@ if __name__ == "__main__":
     )
 
     print(f"Herramienta usada: {resultado["intermediate_steps"][0][0].tool}")
+
     print(resultado["output"])
 
     resultado = ejecutor_agente.invoke(
@@ -92,10 +93,12 @@ if __name__ == "__main__":
         }
     )
     print(f"Herramienta usada: {resultado["intermediate_steps"][0][0].tool}")
+
     print(resultado["output"])
 
     # Qué pasa si alguna entrada no tiene respuesta en las tools definidas
     resultado = ejecutor_agente.invoke({"entrada": "¿Qué es LangChain?"})
 
     print(f"Herramienta usada: {resultado["intermediate_steps"]}")
+
     print(resultado["output"])
