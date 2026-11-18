@@ -80,5 +80,5 @@ if __name__ == "__main__":
             registro = registrar_consulta(pregunta, k, persist_directory="vectorstore/")
             print(json.dumps(registro, indent=2, ensure_ascii=False))
 
-            with open("registros_latencia_costo_2.jsonl", "a", encoding="utf-8") as f:
+            with open("registros_latencia_costo.jsonl", "a", encoding="utf-8") as f:
                 f.write(json.dumps(registro, ensure_ascii=False) + "\n")
