@@ -1,0 +1,66 @@
+
+Fecha y hora: 2026-11-18 00:28:59
+Configuracion: k=3, chunk_size=200, chunk_overlap=30
+
+0.33  1.00  cual es el objetivo del agente
+0.33  1.00  al agente da soporte a nivel nacional
+0.33  1.00  el agente incluye servicios privados
+0.00  n/a  el agente entrega información de las estaciones de Metro
+0.33  1.00  el agente esta conectado a fuentes de datos externas
+0.33  1.00  como se simulan las fuentes de datos externas 
+0.33  1.00  cuales son los nombres de las estructuras usadas para simular las fuentes de datos externas
+0.33  1.00  el agente considera dentro de las interacciones la devolucion de dinero
+0.33  1.00  por que concepto se podria generar la devolucion de dinero y como se llama la funcion
+0.33  1.00  el generar reembolso se ejecuta en forma automática
+0.33  1.00  que se registra en las trazas
+0.33  1.00  que se busca detectar en las trazas
+0.33  1.00  con que frecuencia se sugiere la revision de trazas
+0.33  1.00  en que consiste el calculo del permiso de circulacion
+0.33  1.00  que informacion se requiere para solicitar el calculo del permiso de circulacion
+0.33  1.00  el valor calculado para el permiso de circulacion es definitivo o solo referencial
+
+promedio -> precision: 0.312  recall: 1.000
+
+Fecha y hora: 2026-11-18 00:29:18
+Configuracion: k=3, chunk_size=200, chunk_overlap=30
+
+0.33  1.00  cual es el objetivo del agente
+0.33  1.00  al agente da soporte a nivel nacional
+0.33  1.00  el agente incluye servicios privados
+0.00  n/a  el agente entrega información de las estaciones de Metro
+0.33  1.00  el agente esta conectado a fuentes de datos externas
+0.33  1.00  como se simulan las fuentes de datos externas 
+0.33  1.00  cuales son los nombres de las estructuras usadas para simular las fuentes de datos externas
+0.33  1.00  el agente considera dentro de las interacciones la devolucion de dinero
+0.33  1.00  por que concepto se podria generar la devolucion de dinero y como se llama la funcion
+0.33  1.00  el generar reembolso se ejecuta en forma automática
+0.33  1.00  que se registra en las trazas
+0.33  1.00  que se busca detectar en las trazas
+0.33  1.00  con que frecuencia se sugiere la revision de trazas
+0.33  1.00  en que consiste el calculo del permiso de circulacion
+0.33  1.00  que informacion se requiere para solicitar el calculo del permiso de circulacion
+0.33  1.00  el valor calculado para el permiso de circulacion es definitivo o solo referencial
+
+promedio -> precision: 0.312  recall: 1.000
+
+Fecha y hora: 2026-11-18 00:29:49
+Configuracion: k=5, chunk_size=200, chunk_overlap=30
+
+0.20  1.00  cual es el objetivo del agente
+0.20  1.00  al agente da soporte a nivel nacional
+0.20  1.00  el agente incluye servicios privados
+0.00  n/a  el agente entrega información de las estaciones de Metro
+0.20  1.00  el agente esta conectado a fuentes de datos externas
+0.20  1.00  como se simulan las fuentes de datos externas 
+0.20  1.00  cuales son los nombres de las estructuras usadas para simular las fuentes de datos externas
+0.20  1.00  el agente considera dentro de las interacciones la devolucion de dinero
+0.20  1.00  por que concepto se podria generar la devolucion de dinero y como se llama la funcion
+0.20  1.00  el generar reembolso se ejecuta en forma automática
+0.20  1.00  que se registra en las trazas
+0.20  1.00  que se busca detectar en las trazas
+0.20  1.00  con que frecuencia se sugiere la revision de trazas
+0.20  1.00  en que consiste el calculo del permiso de circulacion
+0.20  1.00  que informacion se requiere para solicitar el calculo del permiso de circulacion
+0.20  1.00  el valor calculado para el permiso de circulacion es definitivo o solo referencial
+
+promedio -> precision: 0.188  recall: 1.000
