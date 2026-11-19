@@ -68,10 +68,11 @@ def registrar_consulta(pregunta, k, persist_directory):
 
 
 if __name__ == "__main__":
+
     preguntas_prueba = [
-        "cual es el objetivo del agente",
-        "como se simulan las fuentes de datos externas",
-        "por que concepto se podria generar la devolucion de dinero y como se llama la funcion",
+        "cuál es el objetivo del agente",
+        "cómo se simulan las fuentes de datos externas",
+        "por cuál concepto se podria generar la devolución de dinero y cómo se llama la función respectiva",
     ]
 
     for pregunta in preguntas_prueba:
